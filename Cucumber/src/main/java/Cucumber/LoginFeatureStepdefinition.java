@@ -13,6 +13,7 @@ import org.testng.Assert;
 import ObjectRepository.LoginObject;
 import ObjectRepository.PageObject;
 import cucumber.api.DataTable;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -126,5 +127,38 @@ public class LoginFeatureStepdefinition {
 		return found;
 
 	}
+	
+	@When("^at homepage click on cart$")
+	public void atHomepageClickOnCart() throws Throwable {
+		driver.findElement(By.xpath("//a[@href='displayCart.htm']")).click();
+	}
+
+	@When("click on checkout")
+	public void clickOnCheckout() throws Throwable {
+		driver.findElement(By.xpath("//a[@href='checkout.htm']")).click();
+	}
+
+	
+
+	@When("click on proceed to pay")
+	public void clickOnProceedToPay() throws Throwable {
+		driver.findElement(By.xpath("//input[@value='Proceed to Pay']")).click();
+	}
+
+	@When("select bank")
+	public void selectBank() throws Throwable {
+		
+		driver.findElement(By.xpath("//div[@id='swit']/div[1]/div/label/i")).click();
+	}
+
+	@And("^click continue button$")
+	public void clickContinueButton() throws Throwable {
+		driver.findElement(By.xpath("//a[@href='#']")).click();
+		String message= driver.findElement(By.xpath("//h2")).getText();
+		Assert.assertEquals(message, "Welcome to Payment Support");
+	}
+
+	
+	
 
 }

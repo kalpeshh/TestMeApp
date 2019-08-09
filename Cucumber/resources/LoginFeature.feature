@@ -18,3 +18,11 @@ Feature: Login Functionality
       | Travel |
       | Laptop |
     Then product should be added in the cart if available
+@data-driven
+    Scenario: payment gateway
+    When at homepage click on cart
+    When click on checkout
+    When  click on proceed to pay 
+    When select bank 
+    And click continue button
+    
