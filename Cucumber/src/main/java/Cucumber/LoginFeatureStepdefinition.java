@@ -75,8 +75,11 @@ public class LoginFeatureStepdefinition {
 		
 		driver.findElement(By.xpath("//label[contains(text(),'HDFC')]")).click();
 		driver.findElement(By.xpath("//a[@href='#']")).click();
-		driver.findElement(By.xpath("//input[contains(text(),'username')]")).sendKeys("123457");
-		driver.findElement(By.xpath("//input[contains(text(),'password')]")).sendKeys("pass@457");
+		driver.findElement(By.name("username")).sendKeys("123457");
+		driver.findElement(By.name("password")).sendKeys("Pass@457");
+		driver.findElement(By.xpath("//input[@value='LOGIN']")).click();
+		driver.findElement(By.name("transpwd")).sendKeys("Trans@457");
+		driver.findElement(By.xpath("//input[@value='PayNow']")).click();
 	}
 
 	
@@ -105,7 +108,7 @@ public class LoginFeatureStepdefinition {
 
 	@When("^user enter username$")
 	public void userEnterUsername() throws Throwable {
-		driver.findElement(By.name("userName")).sendKeys("Linda216");
+		driver.findElement(By.name("userName")).sendKeys("Linda46");
 	}
 
 
@@ -186,7 +189,7 @@ public class LoginFeatureStepdefinition {
 
 	@Then("^redirected to Thankyou page$")
 	public void redirectedToThankyouPage() throws Throwable {
-	
+	Assert.assertEquals(driver.getTitle(), "Order Details");
 	}
 
 
