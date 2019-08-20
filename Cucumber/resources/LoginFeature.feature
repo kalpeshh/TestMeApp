@@ -1,28 +1,38 @@
-Feature: Login Functionality
-
-  @Login
-  Scenario Outline: Login with valid credentials
-    Given Navigate to Home page
-    When user enters "<username>" and "<password>"
+@ProductScenario
+  Feature: End to end scenario for testmeapp
+  
+  
+   Background: do
+  Given Navigate to Home page
+  And user click on signup 
+  When user enter username
+  When user enter fname
+  When user enter lname
+  When user enter password
+  When user enter confirm password
+  When user enter gender
+  When user enter email
+  When user enter mob
+  When user enter dob
+  When user enter address
+  When user select security question
+  When user clicks on button
+  Then user registration is succesfull
+  
+ 
+   
+    When user enters username and password
     Then user logged in successfully
 
-    Examples: 
-      | username | password |
-      | Admin    | password456|
-      | Lalitha  | password123|
+    
 
-  @data-driven
-  Scenario: The one where user picks different product through search functionality
-    When Lalitha searches below products in the search box
-      | Head   |
-      | Travel |
-      | Laptop |
-    Then product should be added in the cart if available
-@data-driven
-    Scenario: payment gateway
-    When at homepage click on cart
+  @AddToCartAndPaymentProcess
+  Scenario: Succesfull Checkout
+    Given Navigate to All Categories - Electronics and Headphone
+    And Add Product to cart
     When click on checkout
-    When  click on proceed to pay 
-    When select bank 
-    And click continue button
+    And select bank and credentials
+    Then redirected to Thankyou page
+
+  
     

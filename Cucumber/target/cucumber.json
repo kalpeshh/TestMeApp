@@ -1,93 +1,258 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "line": 15,
-        "name": "The one where user picks different product through search functionality",
+        "line": 5,
+        "name": "do",
         "description": "",
-        "id": "login-functionality;the-one-where-user-picks-different-product-through-search-functionality",
-        "type": "scenario",
-        "keyword": "Scenario",
+        "type": "background",
+        "keyword": "Background",
         "steps": [
           {
             "result": {
-              "duration": 35424418100,
+              "duration": 6944219400,
               "status": "passed"
             },
-            "line": 16,
-            "name": "Lalitha searches below products in the search box",
+            "line": 6,
+            "name": "Navigate to Home page",
             "match": {
-              "location": "LoginFeatureStepdefinition.lalithaSearchesBelowProductsInTheSearchBox(DataTable)"
+              "location": "LoginFeatureStepdefinition.navigateToHomePage()"
             },
-            "rows": [
-              {
-                "cells": [
-                  "Head"
-                ],
-                "line": 17
-              },
-              {
-                "cells": [
-                  "Travel"
-                ],
-                "line": 18
-              },
-              {
-                "cells": [
-                  "Laptop"
-                ],
-                "line": 19
-              }
-            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 876028300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on signup",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userClickOnSignup()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 184830700,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user enter username",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterUsername()"
+            },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 52496700,
+              "duration": 101774400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enter fname",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterFname()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 104768700,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user enter lname",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterLname()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 172368500,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user enter password",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterPassword()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 163626400,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user enter confirm password",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterConfirmPassword()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 99316200,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user enter gender",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterGender()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 191398800,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user enter email",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterEmail()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 140511000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user enter mob",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterMob()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 141838200,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user enter dob",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterDob()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 122077200,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user enter address",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userEnterAddress()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 232035400,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user select security question",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userSelectSecurityQuestion()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 310551400,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user clicks on button",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userClicksOnButton()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 13185000,
               "status": "passed"
             },
             "line": 20,
-            "name": "product should be added in the cart if available",
+            "name": "user registration is succesfull",
             "match": {
-              "location": "LoginFeatureStepdefinition.productShouldBeAddedInTheCartIfAvailable()"
+              "location": "LoginFeatureStepdefinition.userRegistrationIsSuccesfull()"
             },
             "keyword": "Then "
-          }
-        ],
-        "tags": [
+          },
           {
-            "line": 14,
-            "name": "@data-driven"
+            "result": {
+              "duration": 617640400,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "user enters username and password",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userentersusernameandpassword()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 9871600,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "user logged in successfully",
+            "match": {
+              "location": "LoginFeatureStepdefinition.userLoggedInSuccessfully()"
+            },
+            "keyword": "Then "
           }
         ]
       },
       {
-        "line": 22,
-        "name": "payment gateway",
+        "line": 30,
+        "name": "Succesfull Checkout",
         "description": "",
-        "id": "login-functionality;payment-gateway",
+        "id": "end-to-end-scenario-for-testmeapp;succesfull-checkout",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 180307100,
+              "duration": 422184600,
               "status": "passed"
             },
-            "line": 23,
-            "name": "at homepage click on cart",
+            "line": 31,
+            "name": "Navigate to All Categories - Electronics and Headphone",
             "match": {
-              "location": "LoginFeatureStepdefinition.atHomepageClickOnCart()"
+              "location": "LoginFeatureStepdefinition.navigateToAllCategoriesElectronicsAndHeadphone()"
             },
-            "keyword": "When "
+            "keyword": "Given "
           },
           {
             "result": {
-              "duration": 437936300,
+              "duration": 350427500,
               "status": "passed"
             },
-            "line": 24,
+            "line": 32,
+            "name": "Add Product to cart",
+            "match": {
+              "location": "LoginFeatureStepdefinition.addProductToCart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 265671000,
+              "status": "passed"
+            },
+            "line": 33,
             "name": "click on checkout",
             "match": {
               "location": "LoginFeatureStepdefinition.clickOnCheckout()"
@@ -96,53 +261,47 @@
           },
           {
             "result": {
-              "duration": 424332500,
-              "status": "passed"
+              "duration": 13859327900,
+              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[contains(text(),\u0027username\u0027)]\"}\n  (Session info: chrome\u003d76.0.3809.100)\nFor documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.13.0\u0027, revision: \u00272f0d292\u0027, time: \u00272018-06-25T15:24:21.231Z\u0027\nSystem info: host: \u0027M7-DX-HV1PXJ2\u0027, ip: \u002710.217.199.153\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_162-ea\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\\Users\\A10440~1.09\\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:60273}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 9d2a46ef4db1696fc3bc07ed9050f3fd\n*** Element info: {Using\u003dxpath, value\u003d//input[contains(text(),\u0027username\u0027)]}\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:424)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)\r\n\tat Cucumber.LoginFeatureStepdefinition.selectbankandcredentials(LoginFeatureStepdefinition.java:78)\r\n\tat ✽.And select bank and credentials(LoginFeature.feature:34)\r\n",
+              "status": "failed"
             },
-            "line": 25,
-            "name": "click on proceed to pay",
+            "line": 34,
+            "name": "select bank and credentials",
             "match": {
-              "location": "LoginFeatureStepdefinition.clickOnProceedToPay()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 2553528600,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "select bank",
-            "match": {
-              "location": "LoginFeatureStepdefinition.selectBank()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 295936300,
-              "status": "passed"
-            },
-            "line": 27,
-            "name": "click continue button",
-            "match": {
-              "location": "LoginFeatureStepdefinition.clickContinueButton()"
+              "location": "LoginFeatureStepdefinition.selectbankandcredentials()"
             },
             "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 35,
+            "name": "redirected to Thankyou page",
+            "match": {
+              "location": "LoginFeatureStepdefinition.redirectedToThankyouPage()"
+            },
+            "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 21,
-            "name": "@data-driven"
+            "line": 29,
+            "name": "@AddToCartAndPaymentProcess"
           }
         ]
       }
     ],
-    "name": "Login Functionality",
+    "name": "End to end scenario for testmeapp",
     "description": "",
-    "id": "login-functionality",
+    "id": "end-to-end-scenario-for-testmeapp",
     "keyword": "Feature",
-    "uri": "LoginFeature.feature"
+    "uri": "LoginFeature.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@ProductScenario"
+      }
+    ]
   }
 ]

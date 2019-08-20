@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import ObjectRepository.LoginObject;
@@ -21,7 +22,7 @@ import cucumber.api.java.en.When;
 public class LoginFeatureStepdefinition {
 
 	static WebDriver driver;
-	int productCount = 0;
+	
 
 	@Given("Navigate to Home page")
 	public void navigateToHomePage() throws Throwable {
@@ -32,106 +33,34 @@ public class LoginFeatureStepdefinition {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
-	@When("user enters username and password")
-	public void userEntersUsernameAndPassword() throws Throwable {
-
-		PageObject po = PageFactory.initElements(driver, PageObject.class);
-
-		LoginObject lo = PageFactory.initElements(driver, LoginObject.class);
-
-		po.signin.click();
-
-		lo.username.sendKeys("lalitha");
-
-		lo.password.sendKeys("password123");
-
-		lo.Login.click();
-
-	}
 
 	@Then("user logged in successfully")
 	public void userLoggedInSuccessfully() throws Throwable {
 		System.out.println("User login successfully");
-		//Assert.assertEquals(driver.getTitle(), "Admin Home");
-		driver.quit();
+		Assert.assertEquals(driver.getTitle(), "Home");
+		
 
 	}
 
-	@When("^Lalitha searches below products in the search box$")
-	public void lalithaSearchesBelowProductsInTheSearchBox(DataTable productsdata) throws Throwable {
-		List<String> productsName = productsdata.asList(String.class);
-		navigateToHomePage();
-		userEntersUsernameAndPassword();
-		for (String product : productsName) {
-			driver.findElement(By.name("products")).sendKeys(product);
 
-			driver.findElement(By.xpath("//input[@value='FIND DETAILS']")).click();
-			boolean found = isElementPresent("//a[text()[contains(.,'Add to cart')]]");
-			if (found) {
-				productCount++;
-			}
-			driver.findElement(By.xpath("//a[text()[contains(.,'Home')]]")).click();
-		}
 
-	}
 
-	@Then("^product should be added in the cart if available")
-	public void productShouldBeAddedInTheCartIfAvailable() throws Throwable {
-
-		WebElement element = driver.findElement(By.xpath("//div[@class='shop-menu pull-right']/ul/a/b"));
-		int noofelement = Integer.parseInt(element.getText());
-		Assert.assertEquals(productCount, noofelement);
-	}
-
-	@When("^user enters \"([^\"]*)\" and \"([^\"]*)\"$")
-	public void userEntersAnd(String arg1, String arg2) throws Throwable {
+	@When("user enters username and password")
+	public void userentersusernameandpassword() throws Throwable {
+		
 		PageObject po = PageFactory.initElements(driver, PageObject.class);
 
 		LoginObject lo = PageFactory.initElements(driver, LoginObject.class);
 
-		po.signin.click();
+		//po.signin.click();
 
-		lo.username.sendKeys(arg1);
+		lo.username.sendKeys("Linda");
 
-		lo.password.sendKeys(arg2);
+		lo.password.sendKeys("Password122");
 
 		lo.Login.click();
 	}
 
-	public static boolean isElementPresent(String locator) {
-
-		int attempts = 0;
-
-		boolean found = false;
-
-		while (attempts < 2) {
-
-			try {
-
-				WebElement element = driver.findElement(By.xpath(locator));
-
-				element.click();
-
-				found = true;
-
-				break;
-
-			} catch (Exception e) {
-
-			}
-
-			attempts++;
-
-		}
-
-		return found;
-
-	}
-	
-	@When("^at homepage click on cart$")
-	public void atHomepageClickOnCart() throws Throwable {
-		driver.findElement(By.xpath("//a[@href='displayCart.htm']")).click();
-	}
 
 	@When("click on checkout")
 	public void clickOnCheckout() throws Throwable {
@@ -140,23 +69,130 @@ public class LoginFeatureStepdefinition {
 
 	
 
-	@When("click on proceed to pay")
-	public void clickOnProceedToPay() throws Throwable {
+	@When("select bank and credentials")
+	public void selectbankandcredentials() throws Throwable {
 		driver.findElement(By.xpath("//input[@value='Proceed to Pay']")).click();
-	}
-
-	@When("select bank")
-	public void selectBank() throws Throwable {
 		
-		driver.findElement(By.xpath("//div[@id='swit']/div[1]/div/label/i")).click();
+		driver.findElement(By.xpath("//label[contains(text(),'HDFC')]")).click();
+		driver.findElement(By.xpath("//a[@href='#']")).click();
+		driver.findElement(By.xpath("//input[contains(text(),'username')]")).sendKeys("123457");
+		driver.findElement(By.xpath("//input[contains(text(),'password')]")).sendKeys("pass@457");
 	}
 
-	@And("^click continue button$")
-	public void clickContinueButton() throws Throwable {
-		driver.findElement(By.xpath("//a[@href='#']")).click();
-		String message= driver.findElement(By.xpath("//h2")).getText();
-		Assert.assertEquals(message, "Welcome to Payment Support");
+	
+
+	@Given("^Navigate to All Categories - Electronics and Headphone$")
+	public void navigateToAllCategoriesElectronicsAndHeadphone() throws Throwable {
+		//driver.findElement(By.xpath("//span[contains(text(),'All')]")).click();
+	      //driver.findElement(By.xpath("//span[@onclick='getSubCategoryList('11290')']")).click();
+	      //driver.findElement(By.xpath("//span[contains(text(),'Travel')]")).click();
+	     driver.findElement(By.xpath("//input[@id='myInput']")).sendKeys("Hand bag");
+	     driver.findElement(By.xpath("//input[@value='FIND DETAILS']")).click();
 	}
+
+	@And("^Add Product to cart$")
+	public void addProductToCart() throws Throwable {
+		driver.findElement(By.xpath("//a[contains(text(),'Add')]")).click();
+		driver.findElement(By.xpath("//a[@href='displayCart.htm']")).click();
+	}
+
+
+	@And("^user click on signup$")
+	public void userClickOnSignup() throws Throwable {
+		driver.findElement(By.xpath("//a[@href='RegisterUser.htm']")).click();
+	}
+
+
+	@When("^user enter username$")
+	public void userEnterUsername() throws Throwable {
+		driver.findElement(By.name("userName")).sendKeys("Linda216");
+	}
+
+
+	@When("^user enter fname$")
+	public void userEnterFname() throws Throwable {
+		driver.findElement(By.name("firstName")).sendKeys("linda");
+	}
+
+
+	@When("^user enter lname$")
+	public void userEnterLname() throws Throwable {
+		driver.findElement(By.name("lastName")).sendKeys("lname");
+	}
+
+
+	@When("^user enter password$")
+	public void userEnterPassword() throws Throwable {
+	driver.findElement(By.name("password")).sendKeys("password122");
+	}
+
+
+	@When("^user enter confirm password$")
+	public void userEnterConfirmPassword() throws Throwable {
+		driver.findElement(By.name("confirmPassword")).sendKeys("password122");
+	}
+
+
+	@When("^user enter gender$")
+	public void userEnterGender() throws Throwable {
+		driver.findElement(By.xpath("//input[@value='Female']")).click();
+	}
+
+
+	@When("^user enter email$")
+	public void userEnterEmail() throws Throwable {
+	     driver.findElement(By.name("emailAddress")).sendKeys("linda12@gmail.com");
+	}
+
+
+	@When("^user enter mob$")
+	public void userEnterMob() throws Throwable {
+		driver.findElement(By.name("mobileNumber")).sendKeys("1234567890");
+	}
+
+
+	@When("^user enter dob$")
+	public void userEnterDob() throws Throwable {
+		driver.findElement(By.name("dob")).sendKeys("1/01/1997");
+	
+	}
+
+
+	@When("^user enter address$")
+	public void userEnterAddress() throws Throwable {
+		driver.findElement(By.name("address")).sendKeys("12q marg road");
+	}
+
+
+	@When("^user select security question$")
+	public void userSelectSecurityQuestion() throws Throwable {
+		Select question= new Select(driver.findElement(By.name("securityQuestion")));
+		question.selectByVisibleText("What is your favour color?");
+		driver.findElement(By.name("answer")).sendKeys("red");
+	}
+
+
+	@When("^user clicks on button$")
+	public void userClicksOnButton() throws Throwable {
+		driver.findElement(By.name("Submit")).click();
+	}
+
+
+	@Then("^user registration is succesfull$")
+	public void userRegistrationIsSuccesfull() throws Throwable {
+		Assert.assertEquals(driver.getTitle(), "Login");
+	}
+
+
+	@Then("^redirected to Thankyou page$")
+	public void redirectedToThankyouPage() throws Throwable {
+	
+	}
+
+
+	
+
+	
 
 	
 	
